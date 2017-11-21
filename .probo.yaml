@@ -10,3 +10,5 @@ steps:
     databaseUpdates: false
     revertFeatures: false
     clearCaches: true
+  - name: Generate login link
+    command: "drush --root='/var/www/html/' uli"
