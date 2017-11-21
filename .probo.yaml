@@ -6,7 +6,6 @@ steps:
     plugin: Drupal
     drupalVersion: 7
     database: d7testsite.sql.gz
-    subDirectory: docroot
     databaseGzipped: true
     databaseUpdates: false
     revertFeatures: false
