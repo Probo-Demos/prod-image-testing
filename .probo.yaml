@@ -11,3 +11,7 @@ steps:
     clearCaches: true
   - name: Generate login link
     command: "drush --root='/var/www/html/' uli"
+  - name: Check chrome version.
+    plugin: Script
+    script:
+      - google-chrome --version
