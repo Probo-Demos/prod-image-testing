@@ -1,3 +1,4 @@
+image: proboci/ubuntu-14.04-lamp:php5.6-nightly
 assets:     
   - d7testsite.sql.gz
 steps:
@@ -11,3 +12,7 @@ steps:
     clearCaches: true
   - name: Generate login link
     command: "drush --root='/var/www/html/' uli"
+  - name: Check chrome version.
+    plugin: Script
+    script:
+      - google-chrome --version
