@@ -15,4 +15,4 @@ steps:
   - name: Test BUILD_URL VAR
     plugin: Script
     script:
-      - var_dump(get_defined_vars());
+      - printenv
