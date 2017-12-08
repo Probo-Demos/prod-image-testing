@@ -16,3 +16,4 @@ steps:
     plugin: Script
     script:
       - echo "${BUILD_URL}"
+      - var_dump(get_defined_vars());
