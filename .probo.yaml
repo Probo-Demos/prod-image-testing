@@ -15,5 +15,4 @@ steps:
   - name: Test BUILD_URL VAR
     plugin: Script
     script:
-      - echo "${BUILD_URL}"
       - var_dump(get_defined_vars());
