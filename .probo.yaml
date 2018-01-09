@@ -17,4 +17,5 @@ steps:
     script:
       - php --version
       - mysql --version
+      - apache2 --version
       - lsb_release -a
