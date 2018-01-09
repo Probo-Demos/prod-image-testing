@@ -12,3 +12,9 @@ steps:
     clearCaches: true
   - name: Generate login link
     command: "drush --root='/var/www/html/' uli"
+  - name: Check versions.
+    plugin: Script
+    script:
+      - php --version
+      - mysql --version
+      - lsb_release -a
