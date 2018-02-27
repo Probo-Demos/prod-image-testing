@@ -11,17 +11,19 @@ steps:
     revertFeatures: false
     clearCaches: true
     phpIniOptions:
-      curl.cainfo: $SRC_DIR/cacert.pem
+      curl.cainfo: /root/cacert.pem
   - name: Generate login link.
     command: "drush --root='/var/www/html/' uli"
   - name: Test BUILD_URL VAR.
     plugin: Script
     script:
       - printenv
-  - name: Grab pem file.
+  - name: Setup pem file.
     plugin: Script
     script:
-      - curl http://curl.haxx.se/ca/cacert.pem -o /src/cacert.pem
+      - curl http://curl.haxx.se/ca/cacert.pem -o /root/cacert.pem
+      - cp /etc/php/7.1/apache2/99-probo-settings.ini /etc/php/7.1/cli/99-probo-settings.ini
+      - apache2ctl graceful
   - name: Curl a page.
     plugin: Script
     script:
