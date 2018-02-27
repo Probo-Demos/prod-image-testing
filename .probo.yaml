@@ -1,5 +1,5 @@
 image: proboci/ubuntu-14.04-lamp:php7.1-nightly
-assets:     
+assets:
   - d7testsite.sql.gz
 steps:
   - name: Probo site setup
@@ -10,12 +10,18 @@ steps:
     databaseUpdates: false
     revertFeatures: false
     clearCaches: true
+    phpIniOptions:
+      curl.cainfo: $SRC_DIR/cacert.pem
   - name: Generate login link.
     command: "drush --root='/var/www/html/' uli"
   - name: Test BUILD_URL VAR.
     plugin: Script
     script:
       - printenv
+  - name: Grab pem file.
+    plugin: Script
+    script:
+      - curl http://curl.haxx.se/ca/cacert.pem -o /src/cacert.pem
   - name: Curl a page.
     plugin: Script
     script:
