@@ -21,4 +21,4 @@ steps:
   - name: Curl page.
     plugin: Script
     script:
-      - curl -I https://d9306af3-28c3-4501-a2d4-ca6340df3779.probo.build
+      - curl -I $BUILD_DOMAIN
