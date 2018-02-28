@@ -21,7 +21,7 @@ steps:
   - name: Setup pem file.
     plugin: Script
     script:
-      - wget https://curl.haxx.se/ca/cacert.pem -P /root/cacert.pem
+      - wget https://curl.haxx.se/ca/cacert.pem -P /root/
       - cp /etc/php/7.1/apache2/conf.d/99-probo-settings.ini /etc/php/7.1/cli/conf.d/99-probo-settings.ini
       - apache2ctl graceful
   - name: Curl page.
