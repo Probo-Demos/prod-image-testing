@@ -22,5 +22,5 @@ steps:
   - name: Curl page.
     plugin: Script
     script:
-      - ping https://741c461c-45c9-4809-ac4a-807426c2f368.probo.build
-      - curl -I https://741c461c-45c9-4809-ac4a-807426c2f368.probo.build
+      - ping $BUILD_DOMAIN
+      - curl -I $BUILD_DOMAIN
