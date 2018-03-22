@@ -24,3 +24,7 @@ steps:
     script:
       - ping $BUILD_DOMAIN
       - curl -I $BUILD_DOMAIN
+  - name: Show .env contents.
+    plugin: Script
+    script:
+      - cat /assets/.env
