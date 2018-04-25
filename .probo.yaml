@@ -15,3 +15,8 @@ steps:
     plugin: Script
     script:
       - printenv
+  - name: Check versions.
+    plugin: Script
+    script:
+      - node -v
+      - npm -v
