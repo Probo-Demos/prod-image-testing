@@ -11,7 +11,7 @@ steps:
     clearCaches: true
   - name: Generate login link.
     command: "drush --root='/var/www/html/' uli"
-  - name: Test BUILD_URL VAR.
+  - name: Print all variables.
     plugin: Script
     script:
       - printenv
