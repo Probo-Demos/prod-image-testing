@@ -11,5 +11,7 @@ steps:
     clearCaches: true
   - name: Generate login link
     command: "drush --root='/var/www/html/' uli"
+  - name: Check Ruby version...
+    command: "ruby -v"
   - name: Install rails v5.2.0
     command: "gem install rails -v 5.2.0"
