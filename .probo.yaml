@@ -1,0 +1,16 @@
+image: proboci/ubuntu-16.04-lamp:php-7.1
+assets:     
+  - d7testsite.sql.gz
+steps:
+  - name: Probo site setup
+    plugin: Drupal
+    drupalVersion: 7
+    database: d7testsite.sql.gz
+    databaseGzipped: true
+    databaseUpdates: false
+    revertFeatures: false
+    clearCaches: true
+  - name: Create Solr instance...
+    command: "chown -R solr:solr /opt/solr/ \
+    && cd /var/www/html \
+    && create-solr-instance drupal7"
