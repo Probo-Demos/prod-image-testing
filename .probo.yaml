@@ -11,4 +11,4 @@ steps:
     revertFeatures: false
     clearCaches: true
   - name: Create Solr instance...
-    command: "cd /var/www/html && create-solr-instance drupal"
+    command: "sudo -u solr -- /opt/solr/bin/solr create -c drupal7 -d /opt/solr/search_api_solr/solr-conf/6.x"
