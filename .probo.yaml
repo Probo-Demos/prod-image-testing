@@ -10,5 +10,5 @@ steps:
     databaseUpdates: false
     revertFeatures: false
     clearCaches: true
-  - name: Generate login link
-    command: "create-solr-instance drupal"
+  - name: Create Solr instance...
+    command: "cd /var/www/html && create-solr-instance drupal"
