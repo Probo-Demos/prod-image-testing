@@ -1,0 +1,21 @@
+assets:     
+  - d7testsite.sql.gz
+steps:
+  - name: Probo site setup
+    plugin: Drupal
+    drupalVersion: 7
+    database: d7testsite.sql.gz
+    databaseGzipped: true
+    databaseUpdates: false
+    revertFeatures: false
+    clearCaches: true
+  - name: Generate login link
+    command: "drush --root='/var/www/html' uli"
+  - name: Check versions.
+    plugin: Script
+    script:
+      - php --version
+      - mysql --version
+      - apache2 -v
+      - lsb_release -a
+      - drush --version
