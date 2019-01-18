@@ -10,7 +10,7 @@ steps:
     revertFeatures: false
     clearCaches: true
   - name: Generate login link
-    command: "drush --root='/var/www/html/' uli"
+    command: "drush --root='/var/www/html' uli"
   - name: Check versions.
     plugin: Script
     script:
